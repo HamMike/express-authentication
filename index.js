@@ -1,4 +1,5 @@
 require('dotenv').config();
+var request = require('request');
 var flash = require('connect-flash');
 var express = require('express');
 var ejsLayouts = require('express-ejs-layouts');
@@ -32,6 +33,16 @@ app.use(function(req, res, next) {    //renders all the flash
   res.locals.currentUser = req.user;
   next();
 });
+
+// app.get('/', function(req, res) {
+//   var snowInfo = 'http://api.wunderground.com/api/' + process.env.WUNDERGOUND_KEY + '/forecast/q/43.5928066,-110.8601281.json';
+//   request(snowInfo, function(error, response, body) {
+//     if (!error, response, body) {
+//       snowInfo = JSON.parse(body);
+//       res.send(snowInfo);
+//     }
+//   })
+// });
 
 app.get('/', function(req, res) {
   res.render('index');
