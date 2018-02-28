@@ -35,16 +35,6 @@ app.use(function(req, res, next) {    //renders all the flash
   next();
 });
 
-// app.get('/', function(req, res) {
-//   var snowInfo = 'http://api.wunderground.com/api/' + process.env.WUNDERGOUND_KEY + '/forecast/q/43.5928066,-110.8601281.json';
-//   request(snowInfo, function(error, response, body) {
-//     if (!error, response, body) {
-//       snowInfo = JSON.parse(body);
-//       res.send(snowInfo);
-//     }
-//   })
-// });
-
 app.get('/', function(req, res) {
   res.render('index');
 });
@@ -54,6 +44,7 @@ app.get('/profile', isLoggedIn, function(req, res) {
 });
 
 app.use('/auth', require('./controllers/auth'));
+app.use('/forcast', require('./controllers/forcast'));
 
 var server = app.listen(process.env.PORT || 3000);
 
