@@ -15,6 +15,7 @@ app.set('view engine', 'ejs');
 app.use(require('morgan')('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(ejsLayouts);
+app.use(express.static(__dirname + '/public')); //look in public for js,css,and imgs
 
 app.use(session({
   secret: process.env.SESSION_SECRET, //string used to sign into session (put SESSION_SECRET into .env and equal to a salt)
