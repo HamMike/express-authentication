@@ -19,7 +19,7 @@ router.get('/', function(req, res) {
       snowInfo = JSON.parse(body);
       console.log(snowInfo);
       // res.send(snowInfo.forecast.simpleforecast);
-      res.render('forcast/weather', {snowInfo: snowInfo.forecast.simpleforecast.forecastday});
+      res.render('forecast/weather', {snowInfo: snowInfo.forecast.simpleforecast.forecastday});
     }
   })
 });

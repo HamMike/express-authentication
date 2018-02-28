@@ -44,7 +44,7 @@ app.get('/profile', isLoggedIn, function(req, res) {
 });
 
 app.use('/auth', require('./controllers/auth'));
-app.use('/forcast', require('./controllers/forcast'));
+app.use('/forecast', require('./controllers/forecast'));
 
 var server = app.listen(process.env.PORT || 3000);
 
