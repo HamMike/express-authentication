@@ -21,7 +21,7 @@ function initMap() {
       '</div>'+
       '<h1 id="firstHeading" class="firstHeading">Summit At Snowqualmie</h1>'+
       '<div id="bodyContent">'+
-      '<p><a href="/forecast"</a> '+
+      '<p><a href="/forecast/47.4105905,-121.4135603"</a> '+
       'Sniff Out That Snow</p>'+
       '</div>'+
       '</div>';
@@ -30,7 +30,7 @@ function initMap() {
       '</div>'+
       '<h1 id="firstHeading" class="firstHeading">Crystal Mountain Resort</h1>'+
       '<div id="bodyContent">'+
-      '<p><a href="/forecast"</a> '+
+      '<p><a href="/forecast/46.9353331,-121.4770354"</a> '+
       'Sniff Out That Snow</p>'+
       '</div>'+
       '</div>';
@@ -39,7 +39,7 @@ function initMap() {
       '</div>'+
       '<h1 id="firstHeading" class="firstHeading">Stevens Pass</h1>'+
       '<div id="bodyContent">'+
-      '<p><a href="/forecast"</a> '+
+      '<p><a href="/forecast/47.7357698,-121.1060072"</a> '+
       'Sniff Out That Snow</p>'+
       '</div>'+
       '</div>';

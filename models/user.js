@@ -45,6 +45,7 @@ module.exports = (sequelize, DataTypes) => {
   });
   user.associate = function(models) {                 //user.ass is a class method
     // associations can be defined here
+    models.user.hasMany(models.post);
   }
   //checking to see if password is valid( entered password equals stored password)
   //passwordTyped is the password entered, apllied to the prototype being created (prototyple inheritance)

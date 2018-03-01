@@ -1,11 +1,27 @@
 <h1>weather</h1>
 
-
-
-
 <% for(var i = 0; i < 4; i++) { %>
   <p>Date: <%= snowInfo[i].date.pretty %> in</p>
   <p>Snowfall Day: <%= snowInfo[i].snow_day.in %> in</p>
   <p>Snowfall Night <%= snowInfo[i].snow_night.in %> in</p>
   <p>24 Hour Snowfall <%= snowInfo[i].snow_allday.in %> in</p>
 <% }; %>
+
+
+<form enctype="multipart/form-data" action="/weather" method="POST">
+  <div class="form-group">
+    <label for="title">title</label>
+    <input type="text" class="form-control" id="title" name="title" required>
+  </div>
+
+  <div class="form-group">
+    <label for="comment">comment</label>
+    <textarea type="text" class="form-control" id="comment" name="comment" required></textarea>
+  </div>
+
+  <div class="form-group">
+    <input type="file" name="image">
+  </div>
+
+  <input type="submit" class="btn btn-primary">
+</form>
