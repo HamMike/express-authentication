@@ -12,7 +12,7 @@ function initMap() {
       '</div>'+
       '<h1 id="firstHeading" class="firstHeading">Mt Baker Resort</h1>'+
       '<div id="bodyContent">'+
-      '<p><a href="/forecast"</a> '+
+      '<p><a href="/forecast/48.8143793,-121.7717526"</a> '+
       'Sniff Out That Snow</p>'+
       '</div>'+
       '</div>';
