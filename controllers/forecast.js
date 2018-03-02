@@ -84,13 +84,33 @@ router.post('/:resort/comment', upload.single('image'), function(req, res) {
 //   }
 });
 
+router.get('/:id/edit', function(req, res) {
+  db.post.findById(req.params.id).then(function(commentId) {
+    res.render('forecast/edit', {post: commentId})
+  })
+});
 
 
-router.post('/:resort/comment/edit', function(req, res) {
-  db.post.({
-    where: { id: req.params.id }
+router.put('/:id/new', function(req, res) {
+  db.post.update({
+    comment: req.body.comment
+  }, {
+    where: {
+      id: req.params.id
+    }
   }).then(function(data) {
+    // do something when done updating
     res.send('success');
+  })
+});
+
+router.delete('/:id', function(req,res) {
+  db.post.destroy({
+    where: {
+      id: req.params.id
+    }
+  }).then(function(data) {
+    res.send('destroyed');
   })
 });
 

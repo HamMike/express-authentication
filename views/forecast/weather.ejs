@@ -15,8 +15,8 @@
   <div class="well">
     <img src="<%= d.image %>">
     <p><%= d.comment %></p>
-    <a href="" class=" btn btn-warning">Edit</a>
-     <a href="" class=" btn btn-danger">Delete</a>
+    <a href="/forecast/<%= d.id %>/edit" class=" btn btn-warning">Edit</a>
+    <a href="/forecast/<%= d.id %>" class=" btn btn-danger postDelete">Delete</a>
   </div>
 <% }) %>
 
