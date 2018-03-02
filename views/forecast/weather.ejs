@@ -9,6 +9,15 @@
 
 
 
+<% post.forEach(function(d) { %>
+
+  <img src="<%= d.image %>">
+  <p><%= d.comment %></p>
+
+  <% }) %>
+
+
+
 
 <form enctype="multipart/form-data" action="/forecast/<%= resort %>/comment" method="POST">
   <div class="form-group">

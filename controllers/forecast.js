@@ -7,6 +7,7 @@ var cloudinary = require('cloudinary');
 var multer = require('multer');
 var upload = multer({dest: './uploads/'});
 var fs = require('fs');
+var isLoggedIn = require('../middleware/isLoggedIn');
 var router = express.Router();
 
 
@@ -30,7 +31,7 @@ var router = express.Router();
 // });
 
 
-router.get('/:resort', function(req, res) {
+router.get('/:resort', isLoggedIn, function(req, res) {
   var resort = req.params.resort;
   db.post.findAll({
     where: { title: resort }
@@ -51,9 +52,9 @@ router.get('/:resort', function(req, res) {
 
 
 router.post('/:resort/comment', upload.single('image'), function(req, res) {
-  console.log(req.body.image)
-  console.log(req.user.id)
-  if (req.body.image) {
+  // console.log(req.body.image)
+  // console.log(req.user.id)
+  // if (result.url) {
     cloudinary.v2.uploader.upload(req.file.path, function(error, result) {
       console.log(db);
       db.post.create({
@@ -71,23 +72,19 @@ router.post('/:resort/comment', upload.single('image'), function(req, res) {
         res.redirect('/forecast/weather');
       })
     });
-  } else {
-    db.post.create({
-      title: req.body.title,
-      comment: req.body.comment,
-      image: null,
-      userId: req.user.id
-    }).then(function(post) {
-      res.redirect('/forecast/weather');
-    })
-  }
+//   } else {
+//     db.post.create({
+//       title: req.body.title,
+//       comment: req.body.comment,
+//       image: null,
+//       userId: req.user.id
+//     }).then(function(post) {
+//       res.redirect('/forecast/weather');
+//     })
+//   }
 });
 
 
-
-
-
-//, {post: post}
 
 
 
