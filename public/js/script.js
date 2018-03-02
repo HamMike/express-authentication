@@ -100,4 +100,15 @@ function initMap() {
         infowindowStevens.open(map, stevensPass);
         });
 
-    }
+}
+
+$('.postDelete').on('click', function(e) {
+  e.preventDefault();
+  $.ajax({
+    method: 'DELETE',
+    url: $(this).attr('href')
+  }).done(function(data) {
+    $(this).remove();
+    window.location = '#';
+  });
+});

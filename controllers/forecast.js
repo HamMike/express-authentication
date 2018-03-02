@@ -36,7 +36,7 @@ router.get('/:resort', isLoggedIn, function(req, res) {
   db.post.findAll({
     where: { title: resort }
   }).then(function(post) {
-    console.log(post);
+    // console.log(post);
     var snowInfo = 'http://api.wunderground.com/api/' + process.env.WUNDERGOUND_KEY + '/forecast/q/'+resort+'.json';
     request(snowInfo, function(error, response, body) {
       if (!error, response, body) {
@@ -55,8 +55,8 @@ router.post('/:resort/comment', upload.single('image'), function(req, res) {
   // console.log(req.body.image)
   // console.log(req.user.id)
   // if (result.url) {
-    cloudinary.v2.uploader.upload(req.file.path, function(error, result) {
-      console.log(db);
+    cloudinary.v2.uploader.upload(req.file.path, {width: 400, height: 400, crop: "limit"}, function(error, result) {
+      // console.log(db);
       db.post.create({
         title: req.body.title,
         comment: req.body.comment,
@@ -66,10 +66,10 @@ router.post('/:resort/comment', upload.single('image'), function(req, res) {
         fs.readdir('./uploads', function(err, items) {
           items.forEach(function(file) {
             fs.unlink('./uploads/' + file);
-            console.log('Deleted ' + file);
+            // console.log('Deleted ' + file);
           })
         })
-        res.redirect('/forecast/weather');
+        res.redirect('/forecast/' + req.params.resort);
       })
     });
 //   } else {
@@ -83,6 +83,17 @@ router.post('/:resort/comment', upload.single('image'), function(req, res) {
 //     })
 //   }
 });
+
+
+
+router.post('/:resort/comment/edit', function(req, res) {
+  db.post.({
+    where: { id: req.params.id }
+  }).then(function(data) {
+    res.send('success');
+  })
+});
+
 
 
 

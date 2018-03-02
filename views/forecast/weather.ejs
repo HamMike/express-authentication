@@ -1,20 +1,24 @@
 <h1>weather</h1>
 
 <% for(var i = 0; i < 4; i++) { %>
-  <p>Date: <%= snowInfo[i].date.pretty %> in</p>
-  <p>Snowfall Day: <%= snowInfo[i].snow_day.in %> in</p>
-  <p>Snowfall Night <%= snowInfo[i].snow_night.in %> in</p>
-  <p>24 Hour Snowfall <%= snowInfo[i].snow_allday.in %> in</p>
+  <div class="well">
+    <p>Date: <%= snowInfo[i].date.pretty %> in</p>
+    <p>Snowfall Day: <%= snowInfo[i].snow_day.in %> in</p>
+    <p>Snowfall Night <%= snowInfo[i].snow_night.in %> in</p>
+    <p>24 Hour Snowfall <%= snowInfo[i].snow_allday.in %> in</p>
+  </div>
 <% }; %>
 
 
 
 <% post.forEach(function(d) { %>
-
-  <img src="<%= d.image %>">
-  <p><%= d.comment %></p>
-
-  <% }) %>
+  <div class="well">
+    <img src="<%= d.image %>">
+    <p><%= d.comment %></p>
+    <a href="" class=" btn btn-warning">Edit</a>
+     <a href="" class=" btn btn-danger">Delete</a>
+  </div>
+<% }) %>
 
 
 

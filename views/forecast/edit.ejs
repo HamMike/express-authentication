@@ -1,0 +1,25 @@
+<form action="/tags/<%= tag.id %>" id="edit-tag">
+  <div class="form-group">
+    <label>Name</label>
+    <input type="text" id="name" name="name" value="<%= tag.name %>" >
+  </div>
+  <input type="submit" value="Change It" class="btn btn-success" />
+</form>
+
+<form enctype="multipart/form-data" id="edit-tag" action="/forecast/<%= resort %>/comment" method="POST">
+  <div class="form-group">
+    <label for="title">Resort</label>
+    <select class="custom-select mr-sm-2" name="title" id="inlineFormCustomSelect">
+      <option selected>Choose...</option>
+      <option value="48.8143793,-121.7717526">Mt Baker</option>
+      <option value="47.4105905,-121.4135603">Summit</option>
+      <option value="46.9353331,-121.4770354">Crystal</option>
+      <option value="47.7357698,-121.1060072">Stevens Pass</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="comment">comment</label>
+    <textarea type="text" class="form-control" id="comment" name="comment" required></textarea>
+  </div>
+</form>
