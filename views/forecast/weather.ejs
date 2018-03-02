@@ -9,19 +9,25 @@
   </div>
 <% }; %>
 
-
+<script>
+if(!(<%= post.userId %> === <%- currentUser.id %>)) {
+  $('.postDelete').css('display', 'none');
+}
+</script>
 
 <% post.forEach(function(d) { %>
+
+
   <div class="well">
     <img src="<%= d.image %>">
     <p><%= d.comment %></p>
     <a href="/forecast/<%= d.id %>/edit" class=" btn btn-warning">Edit</a>
     <a href="/forecast/<%= d.id %>" class=" btn btn-danger postDelete">Delete</a>
   </div>
+
+
+
 <% }) %>
-
-
-
 
 <form enctype="multipart/form-data" action="/forecast/<%= resort %>/comment" method="POST">
   <div class="form-group">
