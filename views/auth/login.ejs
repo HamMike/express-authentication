@@ -1,13 +1,13 @@
 <nav class="navbar rounded navbar-light bg-faded">
-  <a class="navbar-brand" href="/">Powder Hound</a>
-  <a class="nav-item nav-link" href="#">Signup</a>
-  <a class="nav-item nav-link" href="#">Logout</a>
+  <div class="navbar-nav">
+    <a class="navbar-brand" href="/">Home</a>
+  </div>
 </nav>
 
 
 <div class="row">
   <div class="col col-sm-6 ">
-    <h1>ogin</h1>
+    <h1>Login</h1>
   </div>
 </div>
 <form action="/auth/login" method="POST">
@@ -24,8 +24,11 @@
   <input class="btn btn-primary" type="submit">
 </form>
 
-<nav class="navbar navbar-light bg-faded">
-<div class"well">
-  <a class="nav-item nav-link active" href="#">Or SignUp Here<span class="sr-only">(current)</span></a>
+<div class="signHere">
+  <p>Or <a href="/auth/signup">Signup Here</a></p>
 </div>
-</nav>
+
+
+<div class="card-footer text-muted rounded footer">
+   <h6>Snow Days :)</h6>
+</div>
