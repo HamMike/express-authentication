@@ -1,26 +1,38 @@
 # Powder Hound
-Express authentication template using Passport + flash messages + custom middleware
+Powder Hound is a snow weather app for, currently, four major ski resorts surrounding Seattle.  PH gives the upcoming snow report for today and the next three days. Users need to sign up and log in to use the site, but once they do they can see predicted snowfall as well as post photos and comments to each resorts weather page.
 
-## Getting Started
+## User Story
+Powder Hound is an app for the resort skier looking for the basics. Is it going to snow and how much.
+The user then can spray about there day to either the weather page for that resort or the weather pages of the other resort. If the spray was to bold, their comment can be edited as well as the entire post being deleted.
 
-#### Scaffold w/tests (see `master` branch)
+## WireFrames
+![alt text](/public/img/wireframe.jpg "wf")
 
-* Run `npm install` to install dependencies
-  * Use `npm run lint:js` to lint your JS
-  * Use `npm run lint:css` to lint your CSS
-  * Use `npm test` to run tests
-* Setup the databases
-  * Change the database names in `config/config.json` to reflect your project
-  * Run `createdb project_name_development` to create the development database
-  * Run `createdb project_name_test` to create the test database
+## Technologies
+* HTML, CSS, JavaScript, jQuery
+* Sequelize, Express, Bcrypt, Node.js, postGres, SQL
+* Bootstrap
 
-#### Finished version (see `brian-finished` branch)
+## API and Outside Resources
 
-* Run `npm install` to install dependencies
-  * Use `npm run lint:js` to lint your JS
-  * Use `npm run lint:css` to lint your CSS
-  * Use `npm test` to run tests
-* Setup the databases
-  * Run `createdb express_auth_development` to create the development database
-  * Run `createdb express_auth_test` to create the test database
-  * Run `sequelize db:migrate` to run migrations
+* Weather Underground
+  * Used to gather snowfall data
+* Cloudinary
+  * Used to store user uploaded photos
+* Google Maps
+  * Used for Lat and Long location
+
+## Challenges
+* Bootstrap 4
+* A lot of struggle implementing the weather API and how it interacted with the app
+(will probably find another API)
+
+## Next Steps
+* Interactive markers that blink with a certain amount of predicted snow
+* Users delete and edit only their photos
+* User profile with stored posts
+* Put routes and models in README
+* Find a better solution for hardcoded google maps data
+
+## HELP!!! From
+* GA Faculty and classmates :)
