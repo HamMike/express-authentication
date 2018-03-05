@@ -1,23 +1,23 @@
 <div class="container background">
 
 
-<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+<nav class="navbar rounded navbar-light bg-faded">
 
 <div class="navbar-nav">
 <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
-<a class="nav-item nav-link" href="#">Features</a>
+
 </div>
 
 </nav>
 
-<h1>weather</h1>
+<h1>Weather: <%= resort %></h1>
 <div class="row pre-scrollable">
   <% for(var i = 0; i < 4; i++) { %>
     <div class="well col-sm-3">
-      <p> <%= snowInfo[i].date.pretty %> in</p>
-      <p>Snowfall Day: <%= snowInfo[i].snow_day.in %> in</p>
-      <p>Snowfall Night: <%= snowInfo[i].snow_night.in %> in</p>
-      <p>24 Hour Snowfall: <%= snowInfo[i].snow_allday.in %> in</p>
+      <p><span class="info date"><%= snowInfo[i].date.pretty %></span></p>
+      <p><span class="info">Snowfall Day: </span><%= snowInfo[i].snow_day.in %> in</p>
+      <p><span class="info">Snowfall Night: </span><%= snowInfo[i].snow_night.in %> in</p>
+      <p><span class="info">24 Hour Snowfall: </span><%= snowInfo[i].snow_allday.in %> in</p>
     </div>
   <% }; %>
 </div>

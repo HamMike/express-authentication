@@ -1,4 +1,8 @@
 
+body{
+  font-family: 'Coiny', cursive;
+}
+
  #map {
    width: 100%;
    height: 400px;
@@ -13,6 +17,14 @@
 
 .button {
   padding-bottom: 10px;
+}
+
+.info {
+  font-weight: 800;
+}
+
+.date {
+  text-decoration: underline;
 }
 
 /* .imageDiv {

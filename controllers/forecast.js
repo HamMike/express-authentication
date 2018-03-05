@@ -18,13 +18,10 @@ router.get('/:resort', isLoggedIn, function(req, res) {
   db.post.findAll({
     where: { title: resort }
   }).then(function(post) {
-    // console.log(post);
     var snowInfo = 'http://api.wunderground.com/api/' + process.env.WUNDERGOUND_KEY + '/forecast/q/'+resort+'.json';
     request(snowInfo, function(error, response, body) {
       if (!error, response, body) {
         snowInfo = JSON.parse(body);
-        // console.dir(snowInfo);
-        // res.send(snowInfo.forecast.simpleforecast);
         res.render('forecast/weather', {snowInfo: snowInfo.forecast.simpleforecast.forecastday, post: post, resort: resort });
         }
     })

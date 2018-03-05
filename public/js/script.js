@@ -104,21 +104,14 @@ function initMap() {
 
 $('.edit-post').on('submit', function(e) {
   e.preventDefault();
-  // var gameElement = $(this);
-  // var gameUrl = gameElement.attr('action');
-  // var gameData = gameElement.serialize();
   $.ajax({
     method: 'PUT',
-    // url: gameUrl,
-    // data: gameData
     url: $(this).attr('action'),
     data: {
       comment: $('#comment').val()
     }
   }).done(function(data) {
-    // get data returned from the PUT route
     console.log(data);
-    // or, you can redirect to another page
     window.location = '/forecast/' + $('#resortName').val();
   });
 });
