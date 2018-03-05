@@ -3,7 +3,7 @@
 function initMap() {
       var seattle = {lat: 47.6129432, lng: -122.4821468};
       var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 8,
+        zoom: 7,
         center: seattle
       });
       // resort markers

@@ -54,7 +54,7 @@
 
     <form enctype="multipart/form-data" action="/forecast/<%= resort %>/comment" method="POST">
       <div class="form-group">
-        <label for="title">Resort</label>
+        <label for="title">Choose Which Resort To Post To</label>
         <select class="custom-select mr-sm-2" name="title" id="inlineFormCustomSelect">
           <option selected>Choose...</option>
           <option value="48.8143793,-121.7717526">Mt Baker</option>
@@ -65,7 +65,7 @@
       </div>
 
       <div class="form-group">
-        <label for="comment">Comment</label>
+        <label for="comment">Add A Comment To Your Photo</label>
         <textarea type="text" class="form-control" id="comment" name="comment" required></textarea>
       </div>
 
