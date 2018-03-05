@@ -27,11 +27,8 @@ body{
   text-decoration: underline;
 }
 
-/* .imageDiv {
-  height:00px;
-  postion: absolute;
-} */
-
-/* body {
-  background-color: #9EADC8;
-} */
+.footer {
+  text-align: center;
+  border: none;
+  margin-top: 10px;
+}
