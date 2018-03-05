@@ -6,8 +6,6 @@
 <div class="navbar-nav">
 <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
 <a class="nav-item nav-link" href="#">Features</a>
-<a class="nav-item nav-link" href="#">Pricing</a>
-<a class="nav-item nav-link disabled" href="#">Disabled</a>
 </div>
 
 </nav>
@@ -30,21 +28,21 @@
 
 <div class="row pre-scrollable container">
   <% post.forEach(function(d) { %>
-<div class="col-lg-4">
+<div class="col-lg-3">
 </div>
-    <div class="col-lg-4">
+    <div class="col-lg-6">
       <div>
       <img class="image img-fluid rounded" src="<%= d.image %>">
       </div>
       <div>
-      <p ><%= d.comment %></p>
+      <p><%= d.comment %></p>
       </div>
       <div class="button">
-      <a href="/forecast/<%= d.id %>/edit" class="userOnly btn btn-info">Edit</a>
-      <a href="/forecast/<%= d.id %>" class="userOnly btn btn-primary">Delete</a>
+      <a href="/forecast/<%= d.id %>/edit" class="btn btn-info">Edit</a>
+      <a href="/forecast/<%= d.id %>" class="btn btn-primary postDelete">Delete</a>
       </div>
     </div>
-<div class="col-lg-4">
+<div class="col-lg-3">
 </div>
   <% }) %>
 </div>
@@ -65,7 +63,7 @@
       </div>
 
       <div class="form-group">
-        <label for="comment">comment</label>
+        <label for="comment">Comment</label>
         <textarea type="text" class="form-control" id="comment" name="comment" required></textarea>
       </div>
 
@@ -77,8 +75,3 @@
     </form>
 
 </div>
-
-<script>
-
-$('.userOnly').hide();
-</script>
