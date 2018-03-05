@@ -1,5 +1,4 @@
-# Express Authentication
-
+# Powder Hound
 Express authentication template using Passport + flash messages + custom middleware
 
 ## Getting Started
