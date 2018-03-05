@@ -4,3 +4,22 @@
    height: 400px;
    /* background-color: grey; */
  }
+
+.image {
+  width: 100%;
+  margin: auto;
+
+}
+
+.button {
+  padding-bottom: 10px;
+}
+
+/* .imageDiv {
+  height:00px;
+  postion: absolute;
+} */
+
+/* body {
+  background-color: #9EADC8;
+} */

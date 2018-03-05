@@ -55,7 +55,7 @@ router.post('/:resort/comment', upload.single('image'), function(req, res) {
   // console.log(req.body.image)
   // console.log(req.user.id)
   // if (result.url) {
-    cloudinary.v2.uploader.upload(req.file.path, {width: 400, height: 400, crop: "limit"}, function(error, result) {
+    cloudinary.v2.uploader.upload(req.file.path, {width: 400, height: 400, crop: "fill"}, function(error, result) {
       // console.log(db);
       db.post.create({
         title: req.body.title,

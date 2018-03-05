@@ -1,54 +1,84 @@
-<h1>weather</h1>
+<div class="container background">
 
-<% for(var i = 0; i < 4; i++) { %>
-  <div class="well">
-    <p>Date: <%= snowInfo[i].date.pretty %> in</p>
-    <p>Snowfall Day: <%= snowInfo[i].snow_day.in %> in</p>
-    <p>Snowfall Night <%= snowInfo[i].snow_night.in %> in</p>
-    <p>24 Hour Snowfall <%= snowInfo[i].snow_allday.in %> in</p>
-  </div>
-<% }; %>
+
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+
+<div class="navbar-nav">
+<a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+<a class="nav-item nav-link" href="#">Features</a>
+<a class="nav-item nav-link" href="#">Pricing</a>
+<a class="nav-item nav-link disabled" href="#">Disabled</a>
+</div>
+
+</nav>
+
+<h1>weather</h1>
+<div class="row pre-scrollable">
+  <% for(var i = 0; i < 4; i++) { %>
+    <div class="well col-sm-3">
+      <p> <%= snowInfo[i].date.pretty %> in</p>
+      <p>Snowfall Day: <%= snowInfo[i].snow_day.in %> in</p>
+      <p>Snowfall Night: <%= snowInfo[i].snow_night.in %> in</p>
+      <p>24 Hour Snowfall: <%= snowInfo[i].snow_allday.in %> in</p>
+    </div>
+  <% }; %>
+</div>
+
+<hr />
+
+
+
+<div class="row pre-scrollable container">
+  <% post.forEach(function(d) { %>
+<div class="col-lg-4">
+</div>
+    <div class="col-lg-4">
+      <div>
+      <img class="image img-fluid rounded" src="<%= d.image %>">
+      </div>
+      <div>
+      <p ><%= d.comment %></p>
+      </div>
+      <div class="button">
+      <a href="/forecast/<%= d.id %>/edit" class="userOnly btn btn-info">Edit</a>
+      <a href="/forecast/<%= d.id %>" class="userOnly btn btn-primary">Delete</a>
+      </div>
+    </div>
+<div class="col-lg-4">
+</div>
+  <% }) %>
+</div>
+
+<hr />
+
+
+    <form enctype="multipart/form-data" action="/forecast/<%= resort %>/comment" method="POST">
+      <div class="form-group">
+        <label for="title">Resort</label>
+        <select class="custom-select mr-sm-2" name="title" id="inlineFormCustomSelect">
+          <option selected>Choose...</option>
+          <option value="48.8143793,-121.7717526">Mt Baker</option>
+          <option value="47.4105905,-121.4135603">Summit</option>
+          <option value="46.9353331,-121.4770354">Crystal</option>
+          <option value="47.7357698,-121.1060072">Stevens Pass</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="comment">comment</label>
+        <textarea type="text" class="form-control" id="comment" name="comment" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <input type="file" name="image">
+      </div>
+
+      <input type="submit" class="btn btn-primary">
+    </form>
+
+</div>
 
 <script>
-if(!(<%= post.userId %> === <%- currentUser.id %>)) {
-  $('.postDelete').css('display', 'none');
-}
+
+$('.userOnly').hide();
 </script>
-
-<% post.forEach(function(d) { %>
-
-
-  <div class="well">
-    <img src="<%= d.image %>">
-    <p><%= d.comment %></p>
-    <a href="/forecast/<%= d.id %>/edit" class=" btn btn-warning">Edit</a>
-    <a href="/forecast/<%= d.id %>" class=" btn btn-danger postDelete">Delete</a>
-  </div>
-
-
-
-<% }) %>
-
-<form enctype="multipart/form-data" action="/forecast/<%= resort %>/comment" method="POST">
-  <div class="form-group">
-    <label for="title">Resort</label>
-    <select class="custom-select mr-sm-2" name="title" id="inlineFormCustomSelect">
-      <option selected>Choose...</option>
-      <option value="48.8143793,-121.7717526">Mt Baker</option>
-      <option value="47.4105905,-121.4135603">Summit</option>
-      <option value="46.9353331,-121.4770354">Crystal</option>
-      <option value="47.7357698,-121.1060072">Stevens Pass</option>
-    </select>
-  </div>
-
-  <div class="form-group">
-    <label for="comment">comment</label>
-    <textarea type="text" class="form-control" id="comment" name="comment" required></textarea>
-  </div>
-
-  <div class="form-group">
-    <input type="file" name="image">
-  </div>
-
-  <input type="submit" class="btn btn-primary">
-</form>
